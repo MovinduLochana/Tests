@@ -3,12 +3,17 @@ package tests;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/*
+Answer to Q2 Part I
+*/
+
 public class Test1 {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
+        // input string => sperate by (,) => String Array => convert all to Int Array
         int[] list = Arrays.stream(sc.next().split(",")).mapToInt(Integer::parseInt).toArray();
 
         int maxPos = 0, minPos = 0;
@@ -18,6 +23,7 @@ public class Test1 {
             minPos = list[i] < list[minPos] ? i : minPos;
         }
 
+        // swapping variables without the need of a temporary variable
         list[0] += list[minPos] - (list[minPos] = list[0]);
         list[list.length-1] += list[maxPos] - (list[maxPos] = list[list.length-1]);
 
@@ -29,6 +35,7 @@ public class Test1 {
 
 }
 
+// Declarative way of doing the same task
 /*
 *
         var arr = new ArrayList<>(Arrays.stream(sc.next().split(",")).map(Integer::parseInt).toList());
