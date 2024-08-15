@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/*
+solution for Q1
+*/
+
 public class Test0 {
     public static void main(String[] args) {
         
@@ -15,9 +19,11 @@ public class Test0 {
                 case 'b'-> pkgB(sc);
                 case 'c'-> pkgC(sc);
                 case 'd'-> pkgD(sc);
-                default -> -1;
+                default -> -1; // x or other character 
             };
 
+            // trigger to exit program
+            // when switch returns : -1
             if(cost == -1) break;
 
             System.out.println("Cost is : " + cost);
@@ -27,10 +33,12 @@ public class Test0 {
 
     }
 
+    // Package A Calculations
     static int pkgA(Scanner sc) {
         return sc.nextInt() * 350; 
     }
 
+    // Package B Calculations
     static int pkgB(Scanner sc) {
         int guest = sc.nextInt();
         
@@ -39,10 +47,12 @@ public class Test0 {
         return guest < 6 ? guest * 420 : guest * 490;
     }
 
+    // Package C Calculations
     static int pkgC(Scanner sc) {
         return sc.nextInt() * 530; 
     }
 
+    // Package D Calculations
     static int pkgD(Scanner sc) {
         int particpantCost = sc.nextInt() * 670;
 
