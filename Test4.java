@@ -6,6 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/*
+Answer to Q4
+validating input data is ignored
+*/
+
 public class Test4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -19,6 +24,7 @@ public class Test4 {
         System.out.print("Salary : ");
         float sal = sc.nextFloat();
 
+        // Auto closable Try with resources
         try (FileWriter file = new FileWriter("MyFile.txt")) {
             file.write("ID : " + id + "\n" + "Grade : " + grade + "\n" + "Salary : " + sal);
         } catch (IOException e) {
@@ -29,10 +35,12 @@ public class Test4 {
             File file = new File("MyFile.txt");
             sc = new Scanner(file);
 
+            // Aggregating data
             id = sc.nextLine().replace("ID : ", "");
             grade = sc.nextLine().replace("Grade : ", "").charAt(0);
             sal = Float.parseFloat(sc.nextLine().replace("Salary :", ""));
 
+            // Calculation are returned by switch based on grade type
             System.out.println("ID : " + id + "\n" + "Salary : " + sal + "\n" + "allowance : " +
                     switch (grade) {
                         case '1' -> sal * 0.25;
