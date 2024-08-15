@@ -18,15 +18,22 @@ public class Test1 {
 
         int maxPos = 0, minPos = 0;
 
+        // finding max and min index positions
         for(int i = 0; i < list.length; i++) {
             maxPos = list[i] > list[maxPos] ? i : maxPos;
             minPos = list[i] < list[minPos] ? i : minPos;
         }
 
-        // swapping variables without the need of a temporary variable
+        // Swapping without the need of a temporary variable
+        // variable a, b => a = b + a - (b = a)
+
+        // swapping index 0 value with min value
         list[0] += list[minPos] - (list[minPos] = list[0]);
+
+        // swapping last index value with max value
         list[list.length-1] += list[maxPos] - (list[maxPos] = list[list.length-1]);
 
+        // printing final array
         for(int i : list) {
             System.out.print(i + " ");
         }
