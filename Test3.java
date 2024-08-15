@@ -2,9 +2,14 @@ package tests;
 
 import java.util.Scanner;
 
+/*
+Answer to Q3
+*/
+
 public class Test3 {
     public static void main(String[] args) {
 
+        // Assertion
         assert calcDiscount('a', 10000) == 2500;
         assert calcDiscount('b', 10000) == 2000;
 
