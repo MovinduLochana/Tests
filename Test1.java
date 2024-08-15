@@ -45,6 +45,9 @@ public class Test1 {
 // Declarative way of doing the same task
 /*
 *
+        Example 01
+        ========================================================================================================
+        
         var arr = new ArrayList<>(Arrays.stream(sc.next().split(",")).map(Integer::parseInt).toList());
 
         int max = arr.stream().max(Integer::compare).orElse(0);
@@ -53,8 +56,22 @@ public class Test1 {
         arr.remove(max);
         arr.remove(min);
 
+        // Implemented in Java 21
         arr.addFirst(min);
         arr.addLast(max);
 
         System.out.println(arr);
+
+
+
+
+        Example 02
+        ==========================================================================================================
+        
+        var stats = Arrays.stream(new Scanner(System.in).next().split(","))
+                          .mapToInt(Integer::parseInt)
+                          .summaryStatistics();
+      
+        int max = stats.getMax();
+        int min = stats.getMin();
 * */
