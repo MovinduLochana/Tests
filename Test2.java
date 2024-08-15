@@ -2,6 +2,10 @@ package tests;
 
 import java.util.Scanner;
 
+/*
+Answer to Q2 Part II [2D Array]
+*/
+
 public class Test2 {
     public static void main(String[] args) {
 
@@ -9,6 +13,7 @@ public class Test2 {
 
         int[][] mat = new int[4][4];
 
+        // Assigning User inputs
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
 
@@ -19,6 +24,8 @@ public class Test2 {
         }
 
         System.out.println("Before swap");
+
+        // printing matrix
         for(int[] i : mat){
             for(int j : i) System.out.print(j + " ");
             System.out.println();
@@ -31,9 +38,13 @@ public class Test2 {
 
         int col2 = sc.nextByte();
 
+        // swapping indices
+        // swapping without temporary variable ==> b = a + b - (a = b)
         for(int i = 0; i < 4; i++) mat[i][col1] += mat[i][col2] - (mat[i][col2] = mat[i][col1]);
 
         System.out.println("After swap");
+
+        //printing matrix
         for(int[] i : mat){
             for(int j : i) System.out.print(j + " ");
             System.out.println();
